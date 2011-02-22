@@ -1,0 +1,14 @@
+---
+en:
+  payment_success: Payment Success
+  currency_code: Currency
+  account_id: Account Id
+  dotpay_pl_payment: Pay with Dotpay
+  url: URL
+  language: Language
+  dotpay_pl: Payment
+  dotpay_pl_submit: "Pay and place order"
+  pin: "PIN"
+  dotpay_server_1: "Dotpay.pl server IP"
+  dotpay_server_2: "Dotpay.pl server IP"
+  

@@ -1,0 +1,14 @@
+---
+en:
+  payment_success: Płatność poprawna
+  currency_code: Waluta
+  account_id: ID konta
+  dotpay_pl_payment: Zapłać w Dotpay
+  url: URL
+  language: Język
+  dotpay_pl: Płatność
+  dotpay_pl_submit: "Zapłać"
+  pin: "PIN"
+  dotpay_server_1: "IP serwera Dotpay.pl"
+  dotpay_server_2: "IP serwera Dotpay.pl"
+  

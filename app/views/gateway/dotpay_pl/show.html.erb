@@ -1,0 +1,48 @@
+<div id="checkout">
+<h1>Checkout</h1>
+
+<ol class="progress-steps" id="checkout-step-payment"><li class="completed-first"><span><%= link_to "Address", checkout_state_path("address") %></span></li>
+
+<li class="completed"><span><%= link_to "Delivery", checkout_state_path("delivery") %></span></li>
+<li class="completed"><span><%= link_to "Payment", checkout_state_path("payment") %></span></li>
+<li class="current"><span>Confirm</span></li>
+<li class="next-last"><span>Complete</span></li></ol>
+  <br clear="left" />
+
+<fieldset id='payment' style="width:70%;">
+  <% form_tag @gateway.preferred_url, :method => "post" do -%>
+
+    
+
+    <fieldset id="order_details">
+      <div class="clear"></div>
+      <legend><%= t("confirm") %></legend>
+      <%= render :partial => 'shared/order_details', :locals => {:order => @order} -%>
+    </fieldset>
+
+    <hr />
+    
+    <%= hidden_field_tag 'id', @gateway.preferred_account_id %>
+    <%= hidden_field_tag 'opis', "#{Spree::Config[:site_name]} Order: #{@order.number}" %>
+    <%= hidden_field_tag 'control', @order.number %>
+    <%= hidden_field_tag 'amount', @order.total.to_s %>
+    <%= hidden_field_tag 'URL', gateway_dotpay_pl_complete_url(@order.number) %>
+    <%= hidden_field_tag 'typ', @gateway.preferred_type %>
+    <%= hidden_field_tag 'currency', @gateway.preferred_currency %>
+    <%= hidden_field_tag 'lang', @gateway.preferred_language %>
+
+    <%= hidden_field_tag 'forename', @bill_address.firstname %>
+    <%= hidden_field_tag 'lastname', @bill_address.lastname %>
+    <%= hidden_field_tag 'street', @bill_address.address1 %>
+    <%= hidden_field_tag 'street_n1', @bill_address.address2 %>
+    <%= hidden_field_tag 'city', @bill_address.city %>
+    <%= hidden_field_tag 'postcode', @bill_address.zipcode %>
+    <%= hidden_field_tag 'country', @bill_address.country.iso3 %>
+    
+    <%= hidden_field_tag 'email', (@order.email || @order.user.try(:email)) %>
+
+    <%= submit_tag t('dotpay_pl_submit') %>
+  <% end %>
+</fieldset>
+
+</div>
