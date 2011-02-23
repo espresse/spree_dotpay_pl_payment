@@ -1,7 +1,7 @@
 ---
 en:
   payment_success: Płatność poprawna
-  currency_code: Waluta
+  currency: Waluta
   account_id: ID konta
   dotpay_pl_payment: Zapłać w Dotpay
   url: URL
