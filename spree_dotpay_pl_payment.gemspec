@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_dotpay_pl_payment'
-  s.version     = '1.0.0'
+  s.version     = '0.5.0'
   s.summary     = 'Dotpay.pl payment system for Spree'
   #s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'
