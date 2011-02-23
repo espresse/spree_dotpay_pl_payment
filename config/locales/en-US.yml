@@ -11,4 +11,9 @@ en:
   pin: "PIN"
   dotpay_server_1: "Dotpay.pl server IP"
   dotpay_server_2: "Dotpay.pl server IP"
+  Address: Address
+  Delivery: Delivery
+  Payment: Payment
+  Confirm: Confirm
+  Complete: Complete
   
