@@ -1,7 +1,7 @@
 SpreeDotpayPlPayment
 ====================
 
-Dotpay.pl payment system for Spree
+Dotpay.pl payment system for Spree (>= 0.30)
 
 Install
 =======

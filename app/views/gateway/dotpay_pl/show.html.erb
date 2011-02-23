@@ -1,18 +1,16 @@
 <div id="checkout">
 <h1>Checkout</h1>
 
-<ol class="progress-steps" id="checkout-step-payment"><li class="completed-first"><span><%= link_to "Address", checkout_state_path("address") %></span></li>
+<ol class="progress-steps" id="checkout-step-payment"><li class="completed-first"><span><%= link_to t("Address"), checkout_state_path("address") %></span></li>
 
-<li class="completed"><span><%= link_to "Delivery", checkout_state_path("delivery") %></span></li>
-<li class="completed"><span><%= link_to "Payment", checkout_state_path("payment") %></span></li>
-<li class="current"><span>Confirm</span></li>
-<li class="next-last"><span>Complete</span></li></ol>
+<li class="completed"><span><%= link_to t("Delivery"), checkout_state_path("delivery") %></span></li>
+<li class="completed"><span><%= link_to t("Payment"), checkout_state_path("payment") %></span></li>
+<li class="current"><span><%= t("Confirm") %></span></li>
+<li class="next-last"><span><%= t("Complete") %></span></li></ol>
   <br clear="left" />
 
 <fieldset id='payment' style="width:70%;">
-  <% form_tag @gateway.preferred_url, :method => "post" do -%>
-
-    
+  <%= form_tag @gateway.preferred_url, :method => "post" do %>
 
     <fieldset id="order_details">
       <div class="clear"></div>
