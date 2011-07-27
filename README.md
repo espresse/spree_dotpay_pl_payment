@@ -20,7 +20,7 @@ Dotpay.pl Settings
 You'll have to set a callback URL in your Dotpay account. Assuming that the address of your shop website is
 http://shop.example.com your callback then should be:
 
-    http://shop.example.com/dotpay_pl/comeback
+    http://shop.example.com/gateway/dotpay_pl/comeback
 
 
 This work based on https://github.com/pronix/spree-ebsin.
