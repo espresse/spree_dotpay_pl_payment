@@ -15,20 +15,19 @@
     <fieldset id="order_details">
       <div class="clear"></div>
       <legend><%= t("confirm") %></legend>
-      <%= render :partial => 'shared/order_details', :locals => {:order => @order} -%>
+      <%= render :partial => 'spree/shared/order_details', :locals => {:order => @order} -%>
     </fieldset>
 
     <hr />
-    
+
     <%= hidden_field_tag 'id', @gateway.preferred_account_id %>
     <%= hidden_field_tag 'opis', "#{Spree::Config[:site_name]} Order: #{@order.number}" %>
     <%= hidden_field_tag 'control', @order.number %>
     <%= hidden_field_tag 'amount', @order.total.to_s %>
-    <%= hidden_field_tag 'URL', gateway_dotpay_pl_complete_url(@order.number) %>
+    <%= hidden_field_tag 'URL', main_app.gateway_dotpay_pl_complete_url(@order.number) %>
     <%= hidden_field_tag 'typ', @gateway.preferred_type %>
     <%= hidden_field_tag 'currency', @gateway.preferred_currency %>
     <%= hidden_field_tag 'lang', @gateway.preferred_language %>
-
     <%= hidden_field_tag 'forename', @bill_address.firstname %>
     <%= hidden_field_tag 'lastname', @bill_address.lastname %>
     <%= hidden_field_tag 'street', @bill_address.address1 %>
@@ -36,7 +35,6 @@
     <%= hidden_field_tag 'city', @bill_address.city %>
     <%= hidden_field_tag 'postcode', @bill_address.zipcode %>
     <%= hidden_field_tag 'country', @bill_address.country.iso3 %>
-    
     <%= hidden_field_tag 'email', (@order.email || @order.user.try(:email)) %>
 
     <%= submit_tag t('dotpay_pl_submit') %>

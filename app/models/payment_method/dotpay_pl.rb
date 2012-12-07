@@ -1,4 +1,4 @@
-class PaymentMethod::DotpayPl < PaymentMethod
+class PaymentMethod::DotpayPl < Spree::PaymentMethod
 
   preference :account_id, :string
   preference :pin, :string
